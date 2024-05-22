@@ -147,4 +147,28 @@ const hasSoup = foods.includes('soup')
 
 console.log('Exercise 10 result:', hasSoup);
 
+/*
+Exercise 11: Odd numbers from an array
+
+1) Choose a method to iterate through the `nums` array.
+
+2) Push each odd number to a new array named `odds`.
+
+Hint: Initialize the `odds` variable to an empty array before the iteration.
+
+Complete Exercise 11 in the space below:
+*/
+
+const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
+
+const odds = [];
+
+for (let i = 0; i < nums.length; i++) { 
+    if (nums[i] % 2 !== 0) { //checks if the number is odd (a number with a remainder will be odd)
+        odds.push(nums[i]);
+    } 
+}
+console.log('Exercise 11 result:', odds);
+
+// (I researched (not chatgpt) the modulus operator) to divide the number by 2 and determine if there were remainders
 
