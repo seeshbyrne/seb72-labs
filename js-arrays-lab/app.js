@@ -79,6 +79,23 @@ foods.splice(1, 1, 'sushi', 'cupcake');
 
 console.log('Exercise 6 result:', foods);
 
+/*
+Exercise 7: Using the `slice()` method
+
+1) Use the `slice()` method to create a new array that contains 'sushi' and 
+   'cupcake'.
+
+2) Assign it to a variable named `yummy`.
+
+Complete Exercise 7 in the space below:
+*/
+
+foods.slice(1, 2) //1 is where we start, 2 is the amount we remove //placeholder
+
+const yummy = foods.slice(1, 3); //3 is the end index // the actual work
+
+console.log('Exercise 7 result:', yummy);
+
 
 
 
