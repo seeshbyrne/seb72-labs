@@ -269,5 +269,4 @@ function calculateGrade(score) {
     }
     
 }
-
 console.log('Exercise 12 Result:', calculateGrade(85));
