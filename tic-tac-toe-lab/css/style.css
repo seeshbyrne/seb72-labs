@@ -6,11 +6,11 @@ body {
 
 .board {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* helps create the layout for the board*/
     width: 325px;
 }
 
-.sqr {
+.sqr { /* all these elements have a single parent <section> */
     width: 30%;
     aspect-ratio: 1/1;
     border: 3px solid black;
