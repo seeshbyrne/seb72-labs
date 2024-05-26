@@ -9,7 +9,6 @@ const squareElements = document.querySelectorAll('.sqr');
 
 const messageElement = document.querySelector('#message');
 
-
 function init() { 
     board = ['', '', '', '', '', '', '', '', ''];
     turn = 'X';
@@ -38,7 +37,7 @@ function updateMessage() {
     } else if (winner === false && tie === true) {
         messageElement.textContent = "It's a tie!";
     } else {
-        messageElement.textContent = `lallala`;
+        messageElement.textContent = `Congratulations`;
     }
 }
 
@@ -52,3 +51,13 @@ const winningCombos = [
     [0, 4, 8],
     [6, 4, 2]
 ]
+
+function handleClick(event) {
+    const clickedElement = event.target;
+    const squareIndex = parseInt(event.target.textContent);
+};
+
+squareElements.forEach((squareElement) => {
+
+    squareElement.addEventListener('click', handleClick);
+});
