@@ -30,6 +30,13 @@ calculator.addEventListener('click', (event) => {
       operator = event.target.textContent;
       console.log(operator);
     }
+    if (event.target.classList.contains('clear')) {
+        num1 = '';
+        operator = '';
+        num2 = '';
+        outcome = '';
+        displayElement.textContent = '';
+    }
 
 });
 
@@ -37,20 +44,16 @@ const calculate = (num1, num2, operator) => {
     if (operator === '+') {
         return (num1 + num2);
     }
+    if (operator === '-') {
+        return (num1 - num2);
+    }
+    if (operator === '*') {
+        return (num1 * num2);
+    }
+    if (operator === '/') {
+        return (num1 / num2);
+    }
 }
-
-
-
-    // if (event.target.innerText === '+') {
-    //     return `${num2}` + `${num1}`;
-    // }
-//    }
-//    if (event.target.innerText === '-') {
-//       return `${num2}` - `${num1}`;
-//    }
-    // if (event.target.innerText === '/') {
-    //    return `${num2}` / `${num1}`;
-    // }
 
 
     
