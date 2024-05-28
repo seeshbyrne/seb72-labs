@@ -119,6 +119,6 @@ squareElement.addEventListener('click', handleClick);
 
 });
 
-
-
+const resetButton = document.querySelector('#reset')
+resetButton.addEventListener('click', init);
 
