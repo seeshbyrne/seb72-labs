@@ -1,11 +1,14 @@
+@import url('ht=Poetsen+One&display=swap');@import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
 body {
-    background-color: gainsboro;
-    font-family: system-ui, sans-serif;
+    background-color: rgba(182, 239, 232, 0.608);
+    font-family: 'freeman';
     margin: 0; 
 }
 
 .board {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap; /* helps create the layout for the board*/
     width: 325px;
 }
@@ -14,6 +17,44 @@ body {
     width: 30%;
     aspect-ratio: 1/1;
     border: 3px solid black;
-    font-size: 64px;
+    font-size: 50px;
+    font-family: 'freeman';
     text-align: center;
+    cursor: crosshair;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2,
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#reset {
+    background-color: rgb(167, 154, 229);
+    font-family: 'freeman';
+    border: 3px solid rgb(255, 0, 187);
+    border-radius: 10px;
+    padding: 10px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px
+}
+
+#reset:hover{
+    top: -0.16em;
+    transition: padding .5s, top .5s, box-shadow .5s;
+    box-shadow: 0 0.4rem 0 -.05rem #4ac478;
 }
