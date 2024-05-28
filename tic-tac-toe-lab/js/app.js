@@ -37,7 +37,7 @@ function updateMessage() {
     } else if (winner === false && tie === true) {
         messageElement.textContent = "It's a tie!";
     } else {
-        messageElement.textContent = `Congratulations`;
+        messageElement.textContent = `Congratulations ${turn}`;
     }
 }
 
@@ -53,11 +53,72 @@ const winningCombos = [
 ]
 
 function handleClick(event) {
-    const clickedElement = event.target;
-    const squareIndex = parseInt(event.target.textContent);
+    if (winner === true) {
+        return;
+    }
+    console.log(event.target.id);
+    // const clickedElement = event.target;
+    const squareIndex = event.target.id;
+    const squareValue = board[squareIndex];
+    if (squareValue !== '') {
+        alert("The square you clicked is filled");
+        return;
+    }
+    placePiece(squareIndex);
+    checkForWinner();
+    checkForTie();
+    switchPlayerTurn();
+    render();
+    
 };
 
-squareElements.forEach((squareElement) => {
+function placePiece(index) {
+    board[index] = turn;
+}
 
-    squareElement.addEventListener('click', handleClick);
+function checkForWinner() {
+    winningCombos.forEach(combo => {
+        let firstValue = board[combo[0]]
+        let secondValue = board[combo[1]]
+        let thirdValue = board[combo[2]]
+        if (firstValue !== '') {
+           if (firstValue === secondValue && secondValue === thirdValue) {
+            winner = true
+            console.log("winner")
+        } 
+        }
+        
+    })
+}
+
+function checkForTie() {
+    if (winner === true) {
+        return;
+    }
+    board.forEach(move => {
+        if (!board.includes('')) {
+            tie = true;
+        } 
+    }) 
+}
+
+function switchPlayerTurn() {
+    if (winner === true) {
+        return;
+    } else {
+        if (turn === 'X') {
+            turn = 'O';
+        } else {
+            turn = 'X';
+        }
+    }
+}
+
+squareElements.forEach((squareElement) => {
+squareElement.addEventListener('click', handleClick);
+
 });
+
+
+
+
