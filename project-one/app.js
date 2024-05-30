@@ -1,6 +1,4 @@
 
-
-let board;
 let winner;
 let number;
 let selectedNumber;
@@ -10,16 +8,26 @@ const numberElements = document.querySelectorAll('.num');
 const messageElement = document.querySelector('#message');
 const displayElement = document.querySelector ('.display');
 
-// const numberOne = document.getElementById('1');
-// const numberTwo = document.getElementById('2');
-// const numberThree = document.getElementById('3');
-// const numberFour = document.getElementById('4');
+function init() {
+    board = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
+    render();
+};
 
-// this iterates over each element in the 'square Elements' node list
-                            //this is a parameter representing the current element being processed in the iteration
-// squareElements.forEach((squareElement) => {
-//     squareElement.addEventListener('click', handleClick);
-// });
+window.onload = init();
+
+// const resetButton = document.querySelector('#reset')
+// resetButton.addEventListener('click', init);
+
+function render() {
+    updateBoard();
+};
+
+function updateBoard() {
+    const squares = document.querySelectorAll('.sqr');
+    board.forEach((cell, index) => {
+        squares[index].textContent = cell;
+    });
+}
 
 numberElements.forEach((numberElement) => {
     numberElement.addEventListener('click', () => {
@@ -29,11 +37,26 @@ numberElements.forEach((numberElement) => {
 
 squareElements.forEach((squareElement) => {
     squareElement.addEventListener('click', () => {
-        if (selectedNumber) {
+           if (selectedNumber && !squareElement.innerText) {
             squareElement.innerText = selectedNumber;
-        }
+        } 
+
     });
 });
+
+//NEED TO ASK HIM ABOUT THIS CONDITION - how to make it to keep the original ones there
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function handleClick(event) {
 //     if (event.target.classList.contains('num')) {
@@ -44,11 +67,7 @@ squareElements.forEach((squareElement) => {
 
 
 
-// function init() { 
-//     board = ['', '', '', '', '', '', '', '', ''];
-//     winner = false;
-//     render();
-// }
+
 
 // window.onload = init();
 
@@ -64,5 +83,3 @@ squareElements.forEach((squareElement) => {
 // squareElement.addEventListener('click', handleClick);
 // });
 
-// const resetButton = document.querySelector('#reset')
-// resetButton.addEventListener('click', init
