@@ -1,43 +1,85 @@
-@import url('ht=Poetsen+One&display=swap');@import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
+
 body {
+    background-color: rgba(175, 201, 153, 0.608);
+    font-family: 'freeman';
+    margin: 0;
+}
+
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 325px;
+}
+
+.sqr {
+    width: 30%;
+    aspect-ratio: 1/1;
+    border: 2px solid rgb(0, 0, 0);
+    font-size: 24px;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(182, 239, 232, 0.608);
-    font-family: 'freeman';
+    background-color: white;
 }
+
+.numberChoice {
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    height: 200px;
+}
+
+.num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 50%;
+    cursor: pointer;
+};
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(0, 0, 0);
-    padding: 6px;
+}
+
+h2,
+h1 {
     display: flex;
-    flex-direction: column;
-    background-color: rgb(0, 0, 0)
+    justify-content: center;
+    align-items: center;
+}
+
+#reset {
+    background-color: rgb(222, 221, 230);
+    font-family: 'freeman';
+    border: 3px solid rgb(173, 152, 168);
+    border-radius: 10px;
+    padding: 10px;
+    width: fit-content;
+    margin: 10px 200px;
+    cursor: pointer;
 
 }
 
-.row {
-    display: flex;
-  }
+#reset:hover{
+    top: -0.16em;
+    transition: padding .5s, top .5s, box-shadow .5s;
+    box-shadow: 0 0.4rem 0 -.05rem #474b48;
+}
 
-  .num {
-    padding: 0;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000000;
-    background-color: #ffffff;
-    border: 2px solid rgb(0, 0, 0);
-  }
 
-#row4{
+
+
+
+
+/* #row4{
     margin-top: 5px;
 }
 
@@ -50,11 +92,5 @@ body {
 }
 #six {
     margin-right: 4px
-}
+} */
 
-h2,
-h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}

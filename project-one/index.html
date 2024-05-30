@@ -2,27 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudoku</title>
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
     <link rel="stylesheet" href="style.css">
-    <script defer src="app.js"></script>    
+    <script defer src="app.js"></script>
+    <title>Sudoku</title>
 </head>
 <body>
     <h1>Sudoku</h1>
-    <h2 id="message">Message</h2>
-    <div class="container">
-      <div class="row" id="row1">
-        <div class="num" id="one"></div>
-        <div class="num" id="two"></div>
-        <div class="num" id="three"></div>
-        <div class="num" id="four">9</div>
-        <div class="num" id="five"></div>
-        <div class="num" id="six">6</div>
-        <div class="num" id="seven"></div>
-        <div class="num" id="eight"></div>
-        <div class="num" id="nine"></div>
-      </div>  
-      <div class="row" id="row2">
+    <h2 id="message"></h2> <!-- where you can display messages to the userhas an ID of "message"-->
+  <div class="container">  
+    <div class="display"></div>
+    <section class="board">                 <!-- game board-->
+        <div class="sqr" id="0"></div>
+        <div class="sqr" id="1"></div>
+        <div class="sqr" id="2"></div>
+        <div class="sqr" id="3"></div>
+        <div class="sqr" id="4"></div>
+        <div class="sqr" id="5"></div>
+        <div class="sqr" id="6"></div>
+        <div class="sqr" id="7"></div>
+        <div class="sqr" id="8"></div>
+     </section>
+     <section class="numberChoice">  
+        <div class="num" id="1">1</div>
+        <div class="num" id="2">2</div>
+        <div class="num" id="3">3</div>
+        <div class="num" id="4">4</div>
+        <div class="num" id="5">5</div>
+        <div class="num" id="6">6</div>
+        <div class="num" id="7">7</div>
+        <div class="num" id="8">8</div>
+        <div class="num" id="9">9</div>    
+        <button id="reset">Reset</button>
+    </section>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+      <!-- <div class="row" id="row2">
         <div class="num" id="one">7</div>
         <div class="num" id="two">2</div>
         <div class="num" id="three"></div>
@@ -109,7 +131,4 @@
         <div class="num" id="seven">6</div>
         <div class="num" id="eight">8</div>
         <div class="num" id="nine"></div>
-      </div>
-    </div>
-</body>
-</html>
+      </div> -->

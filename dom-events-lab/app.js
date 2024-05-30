@@ -110,6 +110,15 @@ calculator.addEventListener('click', (event) => {
     }
 })
 
+
+numberElements.addEventListener('click', (event) => {
+    console.log(event.target);
+    if (event.target.classList.contains('num')) {
+        number = event.target.innerText;
+        displayElement.textContent = number;
+    };
+});
+
 //FUNCTION
 
 function calculate(a, b, operation) {
