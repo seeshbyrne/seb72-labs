@@ -13,9 +13,9 @@ const connect = async () => {
     console.log('Disconnected from MongoDB');
     process.exit();
 };
-const runQueries = async () => {
-  console.log('Queries running.')
-};
+// const runQueries = async () => {
+//   console.log('Queries running.')
+// };
 connect()
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -37,12 +37,6 @@ const option = prompt('Please enter the number of the action you would like to r
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-if (option === 1) {
-    console.log('Lets create a new customer!')
-    createCustomerOne()
-    createCustomerTwo()
-};
-
 const createCustomerOne = async () => {
     const customerData = await Customer.create({
         name: 'Matt',
@@ -59,6 +53,11 @@ const createCustomerTwo = async () => {
     console.log('New Customer', customerData)
 };
 
+if (option === '1') {
+    console.log('Lets create a new customer!')
+    createCustomerOne()
+    createCustomerTwo()
+};
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
