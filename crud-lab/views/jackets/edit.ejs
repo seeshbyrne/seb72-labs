@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Update jacket</title>
+</head>
+<body>
+    <h1>Update jacket!</h1>
+
+    <form action="/jackets/<%= jacket._id %>?_method=PUT" method="post">
+        <label>
+            Name:
+            <input name="name" value="<%= jacket.name %>">
+        </label>
+
+        <label>
+            Colour:
+            <input name="colour" value="<%= jacket.colour %>">
+        </label>
+
+        <label>
+            Style:
+            <input name="style" value="<%=jacket.style%>">
+        </label>
+
+        <button type="submit">Update jacket</button>
+    </form>
+    <a href="/jackets">Back to jackets</a>
+</body>
+</html>

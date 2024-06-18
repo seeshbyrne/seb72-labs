@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>jackets Index</title>
+</head>
+<body>
+    <h1>All jackets</h1>
+    <ul>
+        <% jackets.forEach((jackets) => { %>
+            <li>
+                <a href="/jackets/<%= jackets._id %>"><%= jackets.name %></a>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/jackets/new">Add a new jacket</a>
+</body>
+</html>
+

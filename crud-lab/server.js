@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require("method-override");
 const morgan = require("morgan");
+const path = require("path");
 
 const server = express();
 
@@ -16,11 +17,12 @@ mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}`);
 });
 
-const Shoe = require('./models/shoe.js');
+const Jacket = require('./models/jacket.js');
 
 server.use(express.urlencoded({ extended: false }));
 server.use(methodOverride("_method"));
 server.use(morgan('dev'));
+server.use(express.static(path.join(__dirname, "public")));
 
 //homepage
 server.get("/", (req, res) => {
@@ -28,44 +30,44 @@ server.get("/", (req, res) => {
 });
 
 //GET // new
-server.get("/shoes/new", (req, res) => {
-    res.render("shoes/new.ejs");
+server.get("/jackets/new", (req, res) => {
+    res.render("jackets/new.ejs");
 });
 
 //POST // create
-server.post("/shoes", async (req, res) => {
-    await Shoe.create(req.body);
-    res.redirect("/shoes");
+server.post("/jackets", async (req, res) => {
+    await Jacket.create(req.body);
+    res.redirect("/jackets");
 });
 
 //GET //index
-server.get("/shoes", async (req, res) => {
-    const shoes = await Shoe.find({});
-    res.render("shoes/index.ejs", { shoes: shoes });
+server.get("/jackets", async (req, res) => {
+    const jackets = await Jacket.find({});
+    res.render("jackets/index.ejs", { jackets: jackets });
 });
 
 //GET // show
-server.get("/shoes/:id", async (req, res) => {
-    const shoe = await Shoe.findById(req.params.id);
-    res.render('shoes/show.ejs', {shoe: shoe});
+server.get("/jackets/:id", async (req, res) => {
+    const jacket = await Jacket.findById(req.params.id);
+    res.render('jackets/show.ejs', {jacket: jacket});
 });
 
 // delete
-server.delete("/shoes/:id", async (req, res) => {
-    await Shoe.findByIdAndDelete(req.params.id);
-    res.redirect('/shoes');
+server.delete("/jackets/:id", async (req, res) => {
+    await Jacket.findByIdAndDelete(req.params.id);
+    res.redirect('/jackets');
 });
 
 // edit
-server.get('/shoes/:id/edit', async (req, res) => {
-    const shoe = await Shoe.findById(req.params.id);
-    res.render('shoes/edit.ejs', { shoe: shoe });
+server.get('/jackets/:id/edit', async (req, res) => {
+    const jacket = await Jacket.findById(req.params.id);
+    res.render('jackets/edit.ejs', { jacket: jacket });
 });
 
 // update 
-server.put('/shoes/:id', async (req, res) => {
-    await Shoe.findByIdAndUpdate(req.params.id, req.body);
-    res.redirect('/shoes/' + req.params.id);
+server.put('/jackets/:id', async (req, res) => {
+    await Jacket.findByIdAndUpdate(req.params.id, req.body);
+    res.redirect('/jackets/' + req.params.id);
 })
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
