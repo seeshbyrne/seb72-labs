@@ -8,13 +8,44 @@
 </head>
 <body>
     <h1><%= jacket.name %></h1>
+    <% if (jacket.name === 'Emma') { %>
+        <img
+            class="emma"
+            src="https://www.bubishluxe.com/cdn/shop/files/Bubish_AW24_6831.jpg?v=1707729804"
+            alt="Oatmeal straight cut long sleeve jacket"
+            style="width: 500px; height: auto;"
+        />
+    <% } %>
+    <% if (jacket.name === 'Manhattan') { %>
+        <img
+            class="manhattan"
+            src="https://www.bubishluxe.com/cdn/shop/files/BubishManhattanCropJacketWhite_3.jpg?v=1712108449"
+            alt="white turkey feather cropped long sleeve jacket"
+            style="width: 500px; height: auto;"
+        />
+    <% } %>
+    <% if (jacket.name === 'Sienna') { %>
+        <img
+            class="sienna"
+            src="https://www.bubishluxe.com/cdn/shop/files/Bubish_AW24_6748.jpg?v=1715077463"
+            alt="Blush pink wool long thick coat"
+            style="width: 500px; height: auto;"
+        />
+    <% } %>
+    <% if (jacket.name === 'Harper') { %>
+        <img
+            class="harper"
+            src="https://www.bubishluxe.com/cdn/shop/files/Bubish_AW24_6737.jpg?v=1707715914"
+            alt="Baby pink thick blazer"
+            style="width: 500px; height: auto;"
+        />
+    <% } %>
     <p>Colour: <%= jacket.colour %></p>
     <p>Style: <%= jacket.style %></p>
-
     <form action="/jackets/<%=jacket._id%>?_method=DELETE" method="POST">
-        <button type="submit">Delete <%= jacket.name %></button>
+        <button type="submit" id="delete-button">Delete <%= jacket.name %></button>
     </form>
-    <a href="/jackets/<%= jacket._id %>/edit">Edit <%=jacket.name%></a>
-    <a href="/jackets/">Back to jackets</a>
+    <a href="/jackets/<%= jacket._id %>/edit" id="edit-jacket">Edit <%=jacket.name%></a>
+    <a href="/jackets/" id="back-to-jackets">Back to jackets</a>
 </body>
 </html>

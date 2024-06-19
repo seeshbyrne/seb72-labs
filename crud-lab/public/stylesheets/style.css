@@ -1,3 +1,82 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+VIC:wght@100..400&family=Playwrite+IT+Moderna:wght@100..400&display=swap');
 
+body {
+    font-family: "Playwrite IT Moderna", cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.jacket-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-new-jacket {
+    background-color: pink;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(147, 61, 75);
+}
+
+#add-jacket {
+    background-color: pink;
+    font-family: "Playwrite IT Moderna", cursive;
+    border: 2px solid rgb(147, 61, 75);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#update-jacket {
+    background-color: pink;
+    font-family: "Playwrite IT Moderna", cursive;
+    border: 2px solid rgb(147, 61, 75);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#delete-button {
+    cursor: pointer;
+    background-color: rgb(245, 217, 222);
+    font-family: "Playwrite IT Moderna", cursive;
+    border: 2px solid rgb(147, 61, 75);
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+}
+
+#back-to-jackets {
+    background-color: pink;
+    font-family: "Playwrite IT Moderna", cursive;
+    font-size: 15px;
+    border: 2px solid rgb(147, 61, 75);
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+}
+
+#edit-jacket {
+    background-color: pink;
+    font-family: "Playwrite IT Moderna", cursive;
+    font-size: 15px;
+    border: 2px solid rgb(147, 61, 75);
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+}
 
