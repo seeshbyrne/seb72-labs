@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
 });
 
 // SHOW
-router.get('/:itemid', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const user = await User.findById(req.session.user._id);
         const food = user.pantry.id(req.params.id);
@@ -51,7 +51,7 @@ router.get('/:itemid', async (req, res) => {
 });
 
 // EDIT
-router.get('/:itemid/edit', async (req, res) => {
+router.get('/:id/edit', async (req, res) => {
     try {
         const user = await User.findById(req.session.user._id);
         const food = user.pantry.id(req.params.id);
@@ -65,21 +65,21 @@ router.get('/:itemid/edit', async (req, res) => {
 });
 
 // UPDATE
-router.put('/:itemid', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         const user = await User.findById(req.session.user._id);
         const food = user.pantry.id(req.params.id);
         food.set(req.body);
         await user.save();
-        res.redirect(`/users/${ user._id }/foods/${ food._id }`);
+        res.redirect(`/users/${ req.session.user._id }/foods`);
     } catch (error) {
         console.log(error);
-        res.redirect('/foods');
+        res.redirect('/');
     }
 });
 
 // DELETE
-router.delete('/:itemid', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
        const user = await User.findById(req.session.user._id);
         user.pantry.id(req.params.id).deleteOne();
