@@ -25,20 +25,15 @@ const App = () => {
 
   const [stack, setStack] = useState([]); 
   // THIS IS TO MANAGE THE LIST OF INGREDIENTS IN THE STACK
-  // const addIngredient = (ingredientList) => {
-  //   const updatedStack = [...stack, ingredientList];
-  //   setStack(updatedStack);
-  //   console.log(updatedStack)
-  // }
 
   const addToBurger = (ingredient) => {
     // NEEDS TO ADD THE SELECTED INGREDIENT TO THE STACK
-    setStack([...stack, ingredient]);////////////////////////////////////////////////
+    setStack([...stack, ingredient]);
   };
 
   const removeFromBurger = (index) => {
     //NEEDS TO REMOVE THE SELECTED INGREDIENT FROM THE STACK
-    setStack(stack.filter((_, i) => i !== index));///////////////////////////////////////////////
+    setStack(stack.filter((_, i) => i !== index));
   };
 
   return (

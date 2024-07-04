@@ -2,7 +2,7 @@ import {useState} from 'react';
 import { availableIngredients } from '../App';
 
 const IngredientList = ({ ingredients, addToBurger }) => {
-    // NEED TO: pass the 'availableIngredients' and 'handleAddToBurger' function as props
+
     return (
         <>
         <ul>
@@ -19,4 +19,3 @@ const IngredientList = ({ ingredients, addToBurger }) => {
   
   export default IngredientList;
 
-   // map through props.ingredients

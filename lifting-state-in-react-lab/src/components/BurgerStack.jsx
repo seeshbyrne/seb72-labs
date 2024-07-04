@@ -1,10 +1,7 @@
 import { useState } from "react";
 
 const BurgerStack = ({ stack, removeFromBurger }) => {
-    ///ABOVE I HAD PROPS IN THE BRACKETS INSTEAD
-    // NEED TO pass the 'stack' and 'handleRemoveFromBurger' function as props
-    // In BurgerStack, map over stack to render each ingredient with a 'remove' button.
-    // In BurgerStack, add conditional rendering to display a message like "No Ingredients" if the stack is empty.
+
     return (
         <>
         <h2>Burger Stack</h2>
@@ -27,7 +24,3 @@ const BurgerStack = ({ stack, removeFromBurger }) => {
     };
   
   export default BurgerStack;
-
-
-
-   // map through props.ingredients
