@@ -10,6 +10,13 @@ const Dashboard = ({}) => {
         This is the dashboard page where you, and only you, can see a dashboard
         of all of your things.
       </p>
+
+        <h2>Find your book</h2>
+        <div className="search">
+            <input type="text" placeholder="Enter Your Book Name" />
+            <button>search</button>
+        </div>
+        
     </main>
   );
 };
