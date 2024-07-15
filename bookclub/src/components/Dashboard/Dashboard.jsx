@@ -1,5 +1,7 @@
 import { AuthedUserContext } from '../../App';
 import { useContext } from 'react';
+import './dashboard.css';
+import BookCard from '../BookCard/BookCard';
 
 const Dashboard = ({}) => {
   const user = useContext(AuthedUserContext);
@@ -16,7 +18,14 @@ const Dashboard = ({}) => {
             <input type="text" placeholder="Enter Your Book Name" />
             <button>search</button>
         </div>
-        
+
+        <div className="container">
+          <BookCard />
+          <BookCard />
+          <BookCard />
+          <BookCard />
+        </div>
+
     </main>
   );
 };

@@ -14,7 +14,7 @@ const BookSearch = (props) => {
     //     setIdentifier(event.target.value);
     // }
 
-    return (
+    // return (
         // <section>
         //     <h2>Search</h2>
         //     <form onSubmit={ handleSearch }>
@@ -32,7 +32,7 @@ const BookSearch = (props) => {
         //         <button>Search</button>
         //     </form>
         // </section>
-    )
+    // )
 };
 
 export default BookSearch;

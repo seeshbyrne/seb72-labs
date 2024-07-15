@@ -1,12 +1,19 @@
+
+
 const BookCard = ({book}) => {
 
     return (
         <section>
-            <ul>
-                <h2>Book Details</h2>
-                <p>Title: </p>
-                <p>Author: </p>
-            </ul>
+            <div className="card">
+
+                <h2>Books below:</h2>
+
+                <div className="bottom">
+                    <p>Title: book title here </p>
+                    <p>Author: </p>  
+                </div>
+
+            </div>    
         </section>
     );
 };
