@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css.form.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    {% if turtle %}
+        <h1>Edit {{ turtle.name }}</h1>
+    {% else %}    
+        <h1>Add a turtle</h1>
+    {% endif %}
+    
+</div>
+
+<form method="post" class="form-container">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }} 
+    </table>
+    {% if object %}
+        <button class="btn submit">Update turtle</button>
+    {% else %}
+        <button class="btn submit">Create turtle</button>
+    {% endif %}
+</form>
+{% endblock %}
+
+
+
+
+
+
+
+
+<!-- {% csrf_token %} this is a security thing  -->

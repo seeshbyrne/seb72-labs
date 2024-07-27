@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/cats/turtle-detail.css' %}">
+{% endblock %}
+{% block content %}
+<section class="turtle-container">
+    <div class="turtle-img">
+        
+    </div>
+    <div class="turtle-details">
+        <h1>{{ turtle.name }}</h1>
+        {% if turtle.age > 0 %}
+            <h2>A {{ turtle.age }} year old {{ turtle.breed }}.</h2>
+        {% else %}
+            <h2>A {{ turtle.breed }} kitten.</h2>
+        {% endif %}
+        <p>{{ turtle.description }}</p>
+
+        <div class="turtle-actions">
+            <a href="{% url 'turtle-update' turtle.id %}" 
+            class="btn warn">Edit turtle</a>
+            <a href="{% url 'turtle-delete' turtle.id %}" 
+            class="btn danger">Delete turtle</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
