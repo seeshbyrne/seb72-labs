@@ -22,13 +22,13 @@
     max-width: 60%;
   }
   
-  td > * {
+  td>* {
     width: 100%;
     padding: 2px 4px;
     font-size: var(--font-l);
   }
   
-  td > textarea {
+  td>textarea {
     height: calc(4 * var(--font-l) + 8px);
     font-family: inherit;
   }
@@ -37,4 +37,3 @@
     align-self: flex-end;
     margin-right: 40px;
   }
-  

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/cats/turtle-detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/turtles/turtle-detail.css' %}">
 {% endblock %}
 {% block content %}
 <section class="turtle-container">
@@ -25,4 +25,41 @@
         </div>
     </div>
 </section>
+<div class="suntime-container">
+    <section class="suntime">
+        <div class="subsection-title">
+            <h2>Sun Time</h2>
+
+        </div>
+        <h3>Add a Sun time</h3>
+        <form method="post" action="{% url 'add-suntime' turtle.id %}" class="subsection-content" autocomplete="off">
+            {% csrf_token %}
+            {{ suntime_form.as_p }}
+            <button class="btn submit">Add Sun Time</button>
+        </form>
+        <h3>Past Sun Time</h3>
+        {% if turtle.suntime_set.all.count %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sun Time Date</th>
+                        <th>Sun Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for suntime in turtle.suntime_set.all %}
+                        <tr>
+                            <td>{{ suntime.date }}</td>
+                            <td>{{ suntime.get_suntime_display }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <div class="subsection-content">
+                <p>⚠️ {{ turtle.name }} has not had any time in the sun</p>
+            </div>
+        {% endif %}
+    </section>
+</div>
 {% endblock %}
